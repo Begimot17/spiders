@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic|Playfair+Display+SC:400,700&subset=latin,cyrillic);
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 24px;
+  color: #222222;
+  text-align: center;
+}
+.half{
+  width: 90%;
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 45%;
+}
