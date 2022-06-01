@@ -115,7 +115,7 @@ def main(filter_id=0,date=datetime.strptime('2000-01-01 08:00:00', '%Y-%m-%d %H:
     #     print(f"done-{pl.done}  open-{pl.open}  in_progress-{pl.in_progress}  closed-{pl.closed} ")
     #     print(f"new source-{pl.new} fix-{pl.fix}")
     #     print(f"all-{pl.all}\n\n")
-    return players
+    return sorted(players, key=lambda player: player.done, reverse=True)
 
 
 
