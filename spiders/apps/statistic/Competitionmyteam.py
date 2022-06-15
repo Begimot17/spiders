@@ -11,6 +11,7 @@ headers = {"Host": "spiders.espressoresearch.com",
 class Player(object):
     def __init__(self, key):
         """Constructor"""
+        self.percent=0
         self.done_source=0
         self.done_fix=0
         self.key=key
@@ -25,7 +26,7 @@ class Player(object):
         self.all=0
 
 
-pl_keys = [1321, 1319, 1320, 1688, 1542, 1135, 1182, 1186, 1128]
+pl_keys = [1321, 1319, 1320, 1459, 1542, 1135, 1182, 1186, 1128,1690,1686,1462,1455]
 players = []
 statuses = ["done", "open", "in_progress", "closed","started_date"]
 post = {"rowCount": 100000}
@@ -110,11 +111,8 @@ def main(filter_id=0,date=datetime.strptime('2000-01-01 08:00:00', '%Y-%m-%d %H:
     global  players
     players = [Player(key=x) for x in pl_keys]
     loading(date,filter_id)
-    # for pl in players:
-    #     print(f"{pl.name}   {pl.key}\n")
-    #     print(f"done-{pl.done}  open-{pl.open}  in_progress-{pl.in_progress}  closed-{pl.closed} ")
-    #     print(f"new source-{pl.new} fix-{pl.fix}")
-    #     print(f"all-{pl.all}\n\n")
+    for pl in players:
+        pl.percent = int(pl.fix/pl.done_source*100)
     return sorted(players, key=lambda player: player.done, reverse=True)
 
 

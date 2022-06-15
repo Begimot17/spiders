@@ -101,6 +101,7 @@ content: "▲"
       
       <th class="sorted" scope="col">Done source</th>
       <th class="sorted" scope="col">Done fix</th>
+        <th class="sorted" scope="col">Percent fix</th>
       <th class="sorted" scope="col">Minutes</th>
     </tr>
   </thead>
@@ -118,6 +119,7 @@ content: "▲"
       
       <td>{{ sp.done_source }}</td>
       <td>{{ sp.done_fix }}</td>
+    <td>{{ sp.percent }}%</td>
       <td>{{ sp.minute }}</td>
     </tr>
         {% endfor %}
